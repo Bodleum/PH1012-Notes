@@ -1,0 +1,240 @@
+\documentclass[a4paper,landscape,columns=5]{cheatsheet}
+
+\usetikzlibrary{quotes,angles,decorations.pathmorphing}
+
+%Multi-line comment
+\newcommand{\comment}[1]{}
+
+%Title info
+\title{\textsc{\mbox{PH1012 Help Sheet}}}
+\author{Daniel Laing}
+\date{\today}
+
+%Info for PDF
+\pdfinfo{
+	/Title (PH1012 Formulae Sheet.pfd)
+	/Author (Daniel Laing)}
+	
+%Set margins
+\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm}	
+
+%Set column spacing
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{4pt}
+
+%Create frame styles
+\mdfdefinestyle{normal}{linecolor=gray,linewidth=1pt,%
+	leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm}
+
+\begin{document}
+\maketitle\vspace{5pt}
+\small
+\usection{Quantum Phenomena}
+%%{\color{gray}\rule{\linewidth}{1pt}}
+\subsection{Quantisation \(\left(n\!\in\!\N\right)\)}	
+\begin{tabular}{lr}
+	\mbox{Energy of photon (\(\gamma\)):}
+	 & \hspace{-10pt}{\color{eqbl}\multirow{2}{*}{
+		\(\begin{aligned}
+		E_{\gamma} &= nh\nu\\
+		l &= n\hbar
+		\end{aligned}\)}}\vspace{3pt}\\
+	\mbox{Angular momentum:} & 
+\end{tabular}
+
+\subsection{Particle Nature of Light}
+	{\setstretch{0.8}
+		\begin{enumerate}
+		\item Photoelectric Effect:\\\(\to\) light is absorbed in "chunks".
+		\item X-ray Production:\\\(\to\) light is produced in "chunks".
+		\item Compton Scattering:\\\(\to\) light has momentum.
+		\end{enumerate}
+	}
+
+\subsection{Photoelectric Effect\quad\((L2)\)}
+	Classical: \(\to\) electron receives oscillating force, magnitude increases until ejected.\vspace{-3pt}
+	{\color{gray}\rule{\linewidth}{1pt}}
+	Quantum: \(\to\) electron receives kick from \(\gamma\), energy transferred. Energy breaks attraction (work function, \(W\)):\vspace{-3pt}
+	\[\begin{aligned}
+		\hspace{-30pt}E_k &= h\nu-W,\quad eV_0=E_{kmax}\\
+		\hspace{-30pt}\implies eV_0 &= h\nu -W
+	\end{aligned}\]\vspace{-10pt}
+
+\subsection{X-ray Production\quad\((L3)\)}
+Produced by ``breaking energy'' of electron passing nucleus.
+
+Inner shell interactions give characteristic radiation (\(K_{\alpha}\) and \(K_{\beta}\)).
+
+\(e^-\) completely stopped gives \(\lambda_{min}\):
+	\[\to\lambda_{min}=\dfrac{hc}{eV}\]\vspace{-13pt}
+
+\subsection{Compton Scattering\quad\((L4)\)}
+\(\gamma\) incident on electron scatters:
+
+	\quad \(\to\) assumes \(\gamma\) has momentum.\vspace{-5pt}
+{\color{gray}\rule{\linewidth}{1pt}}
+
+But see 2 peaks, unchanged \& shifted, shift depends on angle:
+\mbox{{\color{eqbl}\(\to\Delta\lambda=\dfrac{h}{mc}\left(1-\cos\vartheta\right)\)\quad{\tiny\(\left(=\dfrac{2h}{mc}\sin^2\dfrac{\vartheta}{2}\right)\)}}}
+
+\(\lambda\) shift from scattering \(e^-\).
+
+Unchanged \(\lambda\) from strongly bound \(e^-\), effectively interacting with atom:
+
+	\quad\ \(\to\,\approx\!\infty\) mass \(\implies\Delta\lambda\to 0\)
+
+\subsection{Matter Waves\quad\((L5)\)}
+Double slit with single \(\gamma\):
+
+	\quad \(\to\gamma\) interferes with itself.
+
+Can't predict landing place, only probability, \(P\propto |E|^2\) Position not defined until measurement.
+
+All matter has wave-like properties:
+\vspace{-8pt}\[\to\lambda=\dfrac{h}{p}\]\vspace{-20pt}
+
+\subsubsection{\textbf{\quad Bragg Scattering}}
+Needs:
+\begin{enumerate}
+	\item \(\phi\approx 2\vartheta\)\hspace{1cm}
+		\begin{tikzpicture}[transform canvas={scale=0.65}]
+			\draw[blue] (0,0) coordinate (a)
+			-- (4,0) coordinate (b);
+			\draw[blue] (0,0.5) coordinate (c)
+			-- (4,0.5) coordinate (d);
+			\draw[->] (0,1) coordinate (e)
+			-- (2,0) coordinate (o);
+			\draw[->] (o)
+			-- (4,1) coordinate (f);
+			\draw[->] (0,1.5) coordinate (g)
+			-- (2,0.5) coordinate (o');
+			\draw[->] (o')
+			-- (4,1.5) coordinate (h);
+			\coordinate (x) at (3.75,0);
+			\coordinate (y) at (3.75,0.5);
+			\draw[<->] (x) -- (y) node[below right] {\(d\)};
+			\draw pic[%
+				"\(\vartheta\)",
+				draw=orange,
+				-,
+				angle eccentricity=0.8,
+				angle radius=25pt,
+			] {angle=g--o'--c};
+			\draw pic[%
+				"\(\vartheta\)",
+				draw=orange,
+				-,
+				angle eccentricity=0.8,
+				angle radius=25pt,
+			] {angle=d--o'--h};
+			\draw pic[%
+				"\(\phi\)",
+				draw=orange,
+				-,
+				angle eccentricity=0.6,
+				angle radius=15pt,
+			] {angle=h--o'--g};
+		\end{tikzpicture}
+	\item \(\lambda\approx\) atomic size \(\left(d\right)\).
+	\item Moderate acceleration \(\left(V\approx 50V\right)\).
+\end{enumerate}
+\[2d\sin\vartheta=n\lambda\hspace{12pt}n\!\in\!\N\]
+Larger particles also interfere
+
+	\quad e.g. small viruses, vitamins.
+
+Accelerated \(e^-\) have energy:
+	\vspace{-8pt}\[\to E_{e^-}=\dfrac{h}{\sqrt{2m_eeV}}\]\vspace{-17pt}
+
+\subsection{Uncertainty Principle\quad\((L6)\)}
+\[\Delta x\Delta p_x\geqslant\dfrac{\hbar}{2\pi}\]
+
+%------
+\[E=\dfrac{h}{\sqrt{2m_eeV}}\]\\
+%------
+\[
+\dfrac{d^2\Psi(x)}{dx^2}+\dfrac{2m}{\hbar^2}\left[E-V(x)\right]\Psi(x)=0
+\]\\
+\[
+\textrm{Reduced mass: }\mu=\dfrac{m_1+m_2}{m_1m_2}
+\]\\
+\[
+E=\dfrac{h^2n^2}{8mL^2}\hspace{12pt}n\!\in\!\N
+\]\\
+\[
+\dfrac{1}{\lambda}=R_\infty Z^2\left(\dfrac{1}{n_f^2}-\dfrac{1}{n_i^2}\right),\hspace{12pt}R_\infty=\dfrac{1}{(4\pi\varepsilon_0)^2}\cdot\dfrac{me^4}{4\pi\hbar^3c}
+\]\\
+\[
+E_n=-\dfrac{Z^2}{n^2}R_y,\enspace R_y=hcR_\infty
+\]\\
+\[
+r_n=a_0\dfrac{n^2}{Z},\hspace{12pt}a_0=\dfrac{4\pi\varepsilon_0\hbar^2}{me^2}
+\]
+
+\newpage
+\usection{Mechanics}
+
+\[
+\alpha=\dfrac{d\omega}{dt}=\dfrac{d^2\vartheta}{dt^2}
+\]\\
+\[
+v=r\omega\left(=r\dfrac{d\vartheta}{dt}\right),\qquad a=r\alpha\left(=r\dfrac{d\omega}{dt}\right)
+\]\\
+\[
+F_{central}=\dfrac{mv^2}{r}=mr\omega^2
+\]\\
+\[
+|\vec{F}|=G\dfrac{m_1m_2}{r^2}
+\]\\
+\[
+g(r)=\dfrac{GM(r)}{r^2}
+\]\\
+\[
+P^2=\dfrac{4\pi^2}{GM}a^3
+\]\\
+\[
+U(r)=-G\dfrac{Mm}{r}
+\]
+
+\newpage
+\usection{Lasers}
+\[
+\Delta\nu = \frac{c\Delta\lambda}{\lambda ^2}
+\]\\
+\[
+R = \frac{A_{21}}{\rho (\nu)B_{21}} = \exp\left[{\dfrac{h\nu}{k_BT}}\right]-1
+\]\\
+\[
+I_2=I_1 e^{2 \alpha L} R_1 R_2
+\]\\
+\[
+\textrm{Amp. threshold: } e^{2 \alpha L} R_1 R_2 = 1
+\]\\
+\[
+\textrm{Max. efficiency: }\eta=\dfrac{\nu_{emission}}{\nu_{pump}}=\dfrac{\lambda_{pump}}{\lambda_{lasing}}
+\]\\
+\[
+2L_{optical}=m\lambda_m\hspace{12pt}m\!\in\mathbb{N}
+\]\\
+\[
+\textrm{Reflectivity, }R=\left(\dfrac{n_1-n_0}{n_1+n_0}\right)^{\!2}
+\]\\
+\[
+\Delta \lambda_{FSR} =\dfrac{\lambda^2}{2L_{opt}} 
+\]\\
+\[
+P_{peak}=\dfrac{E_{pulse}}{t_{pulse}}
+\]\\
+\[
+P_{average}=P\!RF\!\cdot\!E_{pulse}
+\]\\
+\[
+t_{pulse}\approx\dfrac{2L_{opt}}{c(1-Re\!f)}
+\]\\
+\[
+t_{interval}=\dfrac{2L_{opt}}{c}
+\]
+
+\end{document}
